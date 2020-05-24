@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+ext {
+    cucumberVersion = '5.7.0'
+    junitVersion = '4.12'
+    seleniumVersion = '3.141.59'
+}
+
+
+dependencies {
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-picocontainer:${cucumberVersion}"
+    testImplementation "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    testImplementation "junit:junit:${junitVersion}"
+}
+
+group = 'com.qalens'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '1.8'
