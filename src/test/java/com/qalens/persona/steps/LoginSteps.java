@@ -14,17 +14,18 @@ public class LoginSteps {
 
     public LoginSteps(TestContext context) {
         testContext = context;
-        loginPage = testContext.getPageObjectManager().getLoginPage();
+//        loginPage = testContext.getPageObjectManager().getLoginPage();
     }
 
-    @Given("I am on Login Page")
+    @Given("Create Commnity")
     public void iAmOnLoginPage() {
-        loginPage.launch();
+
+        testContext.communityId = "dadasdas";
     }
 
     @When("I enter username {string} and password {string} and try to log in")
     public void iEnterUsernameAndPasswordAndTryToLogin(String username, String password) {
-        loginPage.tryLogin(username,password);
+        System.out.println(testContext.communityId);
     }
 
     @Then("I see error message {string}")
